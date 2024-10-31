@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    background-image: url(pics/wood_backg.png);
+}
+nav{
+    background-color: rgb( 30, 30, 30);
+    width: 100%;
+    height: 95px;
+}
+#searchInput{
+    margin: 20px;
+    width: 180px;
+    border-radius: 10px;
+    height: 20px;
+}
+
+
+
+img{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}

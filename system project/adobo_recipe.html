@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+
+<body>
+    
+  <nav>
+  <a id="add-to-favorites-btn"><img src="pics/favorite.png" width="40px" alt=""></a>
+      <a class="back" href="main_home.html"><img src="pics/back.png" width="40px" alt="back"></a>
+  </nav>
+<div class="f-container">
+  <div class="recipe">
+    <img  class="picture" src="pics/chicken adobo.png" alt=" chicken adobo">
+    <h1>Chicken adobo</h1>
+</div>
+
+<div class="box">
+<div class=" ingredient">
+    <h2>Ingredients:</h2>
+<ul>
+  <li>Chicken (usually thighs or drumsticks)</li>
+  <li>Soy sauce</li>
+  <li>Vinegar (usually white vinegar or cane vinegar)</li>
+  <li>Garlic</li>
+  <li>Bay leaves</li>
+  <li>Whole black peppercorns</li>
+  <li>Water or chicken broth</li>
+  <li>Oil (usually vegetable oil)</li>
+  <li>Sugar (optional, for sweetness)</li>
+  <li>Onions (optional)</li>
+</ul>
+    
+
+
+</div>
+
+<div class=" ingredient">
+    <h2>Procedure:</h2>
+<ol>
+  <li>In a large bowl or container, combine the chicken pieces, soy sauce, vinegar, minced garlic, bay leaves, and whole black peppercorns. Mix well to ensure the chicken is evenly coated. Marinate for at least 30 minutes to allow the flavors to meld.</li>
+  <li>After marinating, heat oil in a large skillet or pot over medium-high heat. Once hot, add the marinated chicken pieces (reserve the marinade) and brown them on all sides for about 5 minutes.</li>
+  <li>Once the chicken is browned, pour in the reserved marinade and add enough water or chicken broth to cover the chicken pieces. Bring the mixture to a boil.</li>
+  <li>Reduce the heat to low, cover the skillet or pot, and let the chicken simmer for about 30-40 minutes, or until the chicken is fully cooked and tender. Stir occasionally.</li>
+  <li>If desired, you can add sugar and sliced onions to the simmering chicken for added sweetness and flavor.</li>
+  <li>Once the chicken is cooked through and the sauce has thickened slightly, taste and adjust the seasoning if needed. You can add more soy sauce or vinegar according to your preference.</li>
+  <li>Serve hot with steamed rice and enjoy your delicious chicken adobo!</li>
+</ol>
+</div>
+</div>
+</div>
+
+<style>
+  nav {
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  #add-to-favorites-btn {
+    position: absolute;
+    right: 45px;
+    z-index: 10;
+    margin-right: 20px;
+    transition: 1s ease;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .back {
+    position: absolute;
+    z-index: 20;
+  }
+
+  #add-to-favorites-btn:active{
+background-image: url(pics/white_heart2.png);
+background-size: 40px;
+background-repeat: no-repeat;
+  }
+  </style>
+  
+
+ 
+ 
+
+  <script>
+    document.getElementById("add-to-favorites-btn").addEventListener("click", function() {
+        var recipeName = "chicken adobo"; // Get the recipe name dynamically
+        var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        if (!favorites.includes(recipeName)) {
+            favorites.push(recipeName);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "Recipe added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "200px";
+            alertMessage.style.right = "0";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        } else {
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "This recipe is already added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "140px";
+            alertMessage.style.right = "-95px";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        }
+    });
+  </script>
+
+</body>
+
+</html>

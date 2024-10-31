@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+
+<body>
+    
+  <nav>
+  <a id="add-to-favorites-btn"><img src="pics/favorite.png" width="40px" alt="add to favorite"></a>
+      <a class="back" href="main_home.html"><img src="pics/back.png" width="40px" alt="back"></a>
+  </nav>
+<div class="f-container">
+  <div class="recipe">
+    <img  class="picture" src="pics/menudo.png" alt="menudo">
+    <h1>Menudo</h1>
+</div>
+
+<div class="box">
+<div class=" ingredient">
+    <h2>Ingredients:</h2>
+<ul>
+<li>1 cup dried monggo (mung beans)</li>
+<li>4 cups water</li>
+<li>2 tablespoons cooking oil</li>
+<li>3 cloves garlic, minced</li>
+<li>1 onion, chopped</li>
+<li>2 tomatoes, chopped</li>
+<li>1/2 lb pork belly or pork shoulder, diced (optional)</li>
+<li>1 Knorr pork or shrimp cube (optional)</li>
+<li>1 bunch spinach or malunggay leaves, cleaned and plucked</li>
+<li>Salt and pepper to taste</li>
+</ul>
+    
+
+
+</div>
+
+<div class=" ingredient">
+    <h2>Procedure:</h2>
+<ol>
+<li>Wash the monggo beans thoroughly, then soak them in water for at least 1 hour or overnight. Drain before cooking.</li>
+<li>In a pot, heat cooking oil over medium heat. Sauté garlic, onions, and tomatoes until fragrant.</li>
+<li>If using, add diced pork and cook until lightly browned.</li>
+<li>Add the soaked monggo beans to the pot. Pour in water and bring to a boil.</li>
+<li>If using, add Knorr cube for added flavor. Stir to dissolve.</li>
+<li>Reduce heat to low and simmer until monggo beans are soft and starting to break down, about 45 minutes to 1 hour, stirring occasionally.</li>
+<li>Once the beans are soft and the stew has thickened, add spinach or malunggay leaves. Cook for another 2-3 minutes until the leaves are wilted.</li>
+<li>Season with salt and pepper to taste.</li>
+<li>Serve hot with steamed rice.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<style>
+  nav {
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+    
+  #add-to-favorites-btn {
+    position: absolute;
+    right: 45px;
+    z-index: 10;
+    margin-right: 20px;
+    transition: 1s ease;
+  }
+  
+  .back {
+    position: absolute;
+    z-index: 20;
+  }
+
+  #add-to-favorites-btn:active{
+background-image: url(pics/white_heart2.png);
+background-size: 40px;
+background-repeat: no-repeat;
+  }
+  </style>
+  
+  
+
+ 
+ 
+
+  <script>
+    document.getElementById("add-to-favorites-btn").addEventListener("click", function() {
+        var recipeName = "menudo"; // Get the recipe name dynamically
+        var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        if (!favorites.includes(recipeName)) {
+            favorites.push(recipeName);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "Recipe added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "200px";
+            alertMessage.style.right = "0";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        } else {
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "This recipe is already added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "140px";
+            alertMessage.style.right = "-95px";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        }
+    });
+  </script>
+
+</body>
+
+</html>

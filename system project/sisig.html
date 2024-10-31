@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+
+<body>
+    
+  <nav>
+  <a id="add-to-favorites-btn"><img src="pics/favorite.png" width="40px" alt="add to favorite"></a>
+      <a class="back" href="main_home.html"><img src="pics/back.png" width="40px" alt="back"></a>
+  </nav>
+<div class="f-container">
+  <div class="recipe">
+    <img  class="picture" src="pics/pork_sisig.png" alt="pork sisig">
+    <h1>pork belly sisig</h1>
+  </div>
+
+  <div class="box">
+  <div class=" ingredient">
+      <h2>Ingredients:</h2>
+  <ul>
+      <li>Pork belly or pork jowl, chopped</li>
+      <li>Chicken liver, chopped</li>
+      <li>Onions, minced</li>
+      <li>Garlic, minced</li>
+      <li>Green chili peppers, minced</li>
+      <li>Red chili peppers, minced</li>
+      <li>Calamansi or lemon juice</li>
+      <li>Soy sauce</li>
+      <li>Salt</li>
+      <li>Black pepper</li>
+      <li>Mayonnaise</li>
+      <li>Oil for frying</li>
+  </ul>
+      
+
+
+  </div>
+
+  <div class=" ingredient">
+      <h2>Procedure:</h2>
+  <ol>
+      <li>Boil the pork belly or jowl until tender. Drain and let it cool, then chop into small pieces.</li>
+      <li>In a separate pan, fry the chopped chicken liver until cooked. Remove from the pan and chop into small pieces.</li>
+      <li>In the same pan, sauté minced onions and garlic until translucent.</li>
+      <li>Add the chopped pork and liver to the pan. Cook until slightly browned and crispy.</li>
+      <li>Add minced green and red chili peppers. Stir well.</li>
+      <li>Season with soy sauce, salt, and black pepper to taste.</li>
+      <li>Squeeze calamansi or lemon juice over the mixture.</li>
+      <li>Optionally, mix in mayonnaise for creaminess.</li>
+      <li>Serve hot and enjoy!</li>
+  </ol>
+  </div>
+</div>
+</div>
+
+
+<style>
+  nav {
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+    
+  #add-to-favorites-btn {
+    position: absolute;
+    right: 45px;
+    z-index: 10;
+    margin-right: 20px;
+    transition: 1s ease;
+  }
+  
+  .back {
+    position: absolute;
+    z-index: 20;
+  }
+
+  #add-to-favorites-btn:active{
+background-image: url(pics/white_heart2.png);
+background-size: 40px;
+background-repeat: no-repeat;
+  }
+  </style>
+
+ 
+ 
+
+  <script>
+    document.getElementById("add-to-favorites-btn").addEventListener("click", function() {
+        var recipeName = "sisig"; // Get the recipe name dynamically
+        var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        if (!favorites.includes(recipeName)) {
+            favorites.push(recipeName);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "Recipe added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "200px";
+            alertMessage.style.right = "0";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        } else {
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "This recipe is already added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "140px";
+            alertMessage.style.right = "-95px";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        }
+    });
+  </script>
+
+</body>
+
+</html>

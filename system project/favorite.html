@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Recipes</title>
+    <link rel="stylesheet" href="style.css">
+
+       
+</head>
+<body>
+    <nav>
+    <h1>Favorite Recipes</h1>
+    </nav>
+    
+    <div class="recipeBox">
+        <ul id="favorite-recipes"></ul>
+    </div>
+
+    <footer>
+        <nav id="f-nav">
+            <a class="icon" href="main_home.html"><img class="pic" src="pics/home.png" alt="home"></a>
+            <a class="icon" href="favorite.html"><img id="h-icon" src="pics/white_heart2.png" alt="favorite"></a>
+            <a class="icon" href="others.html"><img class="pic" src="pics/menu.png" alt="others"></a>
+
+        </nav>
+</footer>
+
+    <script>
+        var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        var favoriteRecipesList = document.getElementById("favorite-recipes");
+        var recipes = [
+    { name: "beef pares", image: "pics/beef_pares.png", link: "pares.html" },
+    { name: "sisig", image: "pics/pork_sisig.png", link: "sisig.html" },
+    { name: "chicken adobo", image: "pics/chicken adobo.png", link: "adobo_recipe.html" },
+    { name: "Giniling", image: "pics/giniling.jpg", link: "giniling.html" },
+    { name: "adobong sitaw", image: "pics/sitaw.png", link: "adobong_sitaw.html" },
+    { name: "Munggo", image: "pics/mungo.jpg", link: "munggo.html" },
+    { name: "menudo", image: "pics/menudo.png", link: "menudo.html" },
+    { name: "sinigang", image: "pics/sinigang.png", link: "sinigang.html" },
+    { name: "kare kare", image: "pics/karekare.png", link: "kare_kare.html" },
+    { name: "ginataang isda", image: "pics/ginataang_isda.jpg", link: "ginataang_isda.html" },
+   
+            // Add more recipes here
+        ];
+
+        // Function to remove duplicates from an array
+        function removeDuplicates(array) {
+            return array.filter((item, index) => array.indexOf(item) === index);
+        }
+
+        // Function to display favorite recipes
+        function displayFavorites() {
+            favoriteRecipesList.innerHTML = ''; // Clear previous list
+            var uniqueFavorites = removeDuplicates(favorites);
+
+            uniqueFavorites.forEach(function(recipeName) {
+                var recipe = recipes.find(r => r.name === recipeName);
+                if (recipe) {
+                    var listItem = document.createElement("li");
+                    listItem.classList.add("recipeItem");
+
+                    // Create anchor tag with image link
+                    var link = document.createElement("a");
+                    link.href = recipe.link;
+                    var img = document.createElement("img");
+                    img.src = recipe.image;
+                    img.alt = recipe.name;
+                    link.appendChild(img);
+
+                    // Recipe name
+                    var recipeNameElement = document.createElement("div");
+                    recipeNameElement.classList.add("recipeName");
+                    recipeNameElement.textContent = recipe.name;
+
+                    // Add "Remove from Favorites" button for each favorite recipe
+                    var removeButton = document.createElement("button");
+                    removeButton.textContent = "Remove";
+                    removeButton.classList.add("removeButton");
+                    removeButton.addEventListener("click", function() {
+                        var index = favorites.indexOf(recipeName);
+                        if (index !== -1) {
+                            favorites.splice(index, 1); // Remove from favorites list
+                            localStorage.setItem("favorites", JSON.stringify(favorites)); // Update localStorage
+                            displayFavorites(); // Update displayed list
+                        }
+                    });
+
+                    listItem.appendChild(recipeNameElement); // Append recipe name
+                    listItem.appendChild(link);
+                    listItem.appendChild(removeButton);
+                    favoriteRecipesList.appendChild(listItem);
+                }
+            });
+        }
+
+        // Function to check if a recipe is already added to favorites
+        function isRecipeInFavorites(recipeName) {
+            return favorites.includes(recipeName);
+        }
+
+        // Function to add a recipe to favorites
+        function addToFavorites(recipeName) {
+            if (!isRecipeInFavorites(recipeName)) {
+                favorites.push(recipeName);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                displayFavorites(); // Update displayed list
+            } else {
+                alert("This recipe is already added to favorites!");
+            }
+        }
+
+        // Display favorites initially
+        displayFavorites();
+    </script>
+</body>
+</html>

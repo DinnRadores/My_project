@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+
+<body>
+    
+  <nav>
+  <a id="add-to-favorites-btn"><img src="pics/favorite.png" width="40px" alt="add to favorite"></a>
+      <a class="back" href="main_home.html"><img src="pics/back.png" width="40px" alt="back"></a>
+  </nav>
+<div class="f-container">
+  <div class="recipe">
+    <img  class="picture" src="pics/karekare.png" alt="kare-kare">
+    <h1>Kare-kare</h1>
+</div>
+
+<div class="box">
+<div class=" ingredient">
+    <h2>ingredients</h2>
+    <li>2 lbs ox tail, cut into 2-inch lengths</li>
+    <li>1 lb beef tripe, cleaned and cut into bite-sized pieces</li>
+     <li>1 cup peanut butter</li>
+     <li>2 eggplants, sliced diagonally</li>
+     <li>1 bundle string beans (sitaw), cut into 2-inch lengths</li>
+     <li>1 bundle bok choy (pechay), separated into stalks</li>
+     <li>1 onion, chopped</li>
+     <li>4 cloves garlic, minced</li>
+     <li>4 tablespoons annatto seeds (achuete)</li>
+     <li>4 cups beef broth</li>
+     <li>2 tablespoons cooking oil</li>
+     <li>Salt and pepper to taste</li>
+    
+
+
+</div>
+
+<div class=" ingredient">
+    <h3>Procedure:</h3>
+    <ol>
+      <li>In a large pot, boil ox tail and beef tripe in water until tender. Drain and set aside.</li>
+      <li>In a separate pan, heat cooking oil and sauté garlic and onions until fragrant.</li>
+      <li>Add annatto seeds and cook until the oil turns red. Remove the seeds and discard.</li>
+      <li>Add the boiled ox tail and beef tripe. Sauté for a few minutes.</li>
+      <li>Pour in the beef broth and bring to a boil. Simmer for about an hour or until the meat is tender.</li>
+      <li>Add peanut butter and stir until well combined. Season with salt and pepper to taste.</li>
+      <li>Add the eggplants, string beans, and bok choy. Cook until the vegetables are tender.</li>
+      <li>Adjust seasoning if necessary. Serve hot with bagoong (shrimp paste) on the side.</li>
+    </ol>
+</div>
+</div>
+</div>
+
+<style>
+  nav {
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  #add-to-favorites-btn {
+    position: absolute;
+    right: 45px;
+    z-index: 10;
+    margin-right: 20px;
+    transition: 1s ease;
+  }
+  
+  .back {
+    position: absolute;
+    z-index: 20;
+  }
+
+  #add-to-favorites-btn:active{
+background-image: url(pics/white_heart2.png);
+background-size: 40px;
+background-repeat: no-repeat;
+  }
+  </style>
+  
+  
+
+
+  <script>
+    document.getElementById("add-to-favorites-btn").addEventListener("click", function() {
+        var recipeName = "kare kare"; // Get the recipe name dynamically
+        var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        if (!favorites.includes(recipeName)) {
+            favorites.push(recipeName);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "Recipe added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "200px";
+            alertMessage.style.right = "0";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        } else {
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "This recipe is already added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "140px";
+            alertMessage.style.right = "-95px";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        }
+    });
+  </script>
+
+</body>
+
+</html>

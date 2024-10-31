@@ -1,0 +1,94 @@
+body{
+    margin: 0px;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    background-size: 200px;
+}
+
+nav{
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: white;
+}
+.favorite{
+    position: fixed;
+    right: 15px;
+   color: white;
+   text-decoration: none;
+   background-color: rgba(0, 0, 0, 0.363);
+
+}
+.back{
+    color: white;
+    position: fixed;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.f-container{
+    position: relative;
+    background-color: white;
+    background-image: url(pics/white_backg.png);
+    background-size: 400px;
+    
+    margin-top: 150px;
+    width: 100%;
+    height: 100%;
+    border-radius:25px 25px 0px 0px ;
+}
+
+.picture{
+    display: block;
+    margin: auto;
+    width: 300px;
+    margin-top: -160px;
+    border-radius: 50%;
+    background-color: rgb(30, 30, 30);
+    box-shadow: 8px 8px 25px 4px rgba(0, 0, 0, 0.892);
+    transition: 1s ease;
+}
+
+.picture:hover{
+    transform: rotate(180deg);
+    box-shadow: -8px -8px 25px 4px rgba(0, 0, 0, 0.892);
+
+    width: 320px;
+
+}
+.recipe{
+    padding: 20px 0px;
+    margin: 0px 0px;
+    text-align: center;
+    color: black;
+    font-family: verdana;
+    letter-spacing: -1px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    color: black;
+    padding-bottom: 15px;
+    margin: 0px 20px;
+    margin-left: 10px;
+}
+
+.ingredient{
+    width: 60%;
+ background-color: rgba(30, 30, 30, 0.751);
+ color: white;
+ padding: 15px;
+ margin-top: 10px;
+ padding-top: 0px;
+ border-radius: 20px;
+ margin-left: 20px;
+ 
+}
+
+h1{
+    font-family: cursive;
+    background-color: rgba(0, 0, 0, 0.577);
+    color: rgb(255, 252, 252);
+}

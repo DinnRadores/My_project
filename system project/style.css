@@ -1,0 +1,166 @@
+body{
+    margin: 0px;
+    padding-top: 0;
+    background-color: rgb(30, 30, 30);
+    padding-left: 20px;
+    padding-bottom: 160px;
+    margin-top: 105px;
+}
+
+nav{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 85px;
+    background-color: rgb(30, 30, 30);
+    padding: 25px;
+    padding-bottom: 30px;
+    box-shadow: 8px 0px 16px 6px rgba(0, 0, 0, 0.792);
+    margin-left: 0px;
+    margin-right: 0px;
+    z-index: 1000;
+}
+
+h1{
+    margin-left: 60px;
+    top: 32px;
+    position: fixed;
+    color: white;
+    font-size: 45px;
+    text-wrap: nowrap;
+}
+
+.recipeBox {
+    display: inline-block;
+    flex-wrap: wrap;
+}
+
+.recipeItem {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    margin-right: 15px;
+}
+
+.recipeItem img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.804);
+    transition: transform 1s ease;
+    margin-bottom: 10px;
+    margin-top: 60px;
+}
+
+.recipeItem img:hover {
+    transform: rotate(180deg);
+}
+
+.recipeName {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 10px; 
+    margin-top: 40px;
+}
+
+.removeButton {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(30, 30, 30);
+    color: #ffffff;
+    border: 2px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 1s ease;
+    border-radius: 5px;
+}
+
+.removeButton:active {
+    background-color: white;
+    color: rgb(30, 30, 30);
+    border: 2px solid rgb(30, 30, 30);
+
+}
+
+ul {
+    padding: 0;
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 85px;
+    background-color:  rgb(30, 30, 30);
+  }
+
+  #f-nav{
+ margin-left: -45px;
+ position: absolute;
+ bottom: 20px;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ padding-right: 20px;  }
+
+ #h-icon,.pic{
+    width: 28px;
+    height: 28px;
+    margin: 5px 45px;
+    opacity: 30%;
+    background-image: url(pics/pink_heart.png);
+  
+  }
+
+.pic:active{
+  opacity: 100%;
+}
+
+#h-icon{
+  opacity: 100%;
+  background-image: url(pics/white_heart2.png);
+}
+
+.about{
+    width: 100%;
+    height: 60px;
+    position: relative;
+    top: 60px;
+    padding-right: 20px;
+    margin-right: 40px;
+
+
+}
+
+#about-link{
+    position: absolute;
+    color: white;
+    background-color: rgb(30, 30, 30);
+    text-decoration: none;
+    padding: 20px;
+    padding-right: 45px;
+    padding-left: 45px;
+    text-wrap: nowrap;
+    font-size: 20px;
+    width: 100%;
+    margin-right: 20px;
+    transition: 0.5s ease;
+}
+
+
+#about-link:hover{
+
+    background-color: white;
+    color: black;
+}

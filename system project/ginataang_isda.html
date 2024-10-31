@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+
+<body>
+    
+  <nav>
+  <a id="add-to-favorites-btn"><img src="pics/favorite.png" width="40px" alt="add to favorite"></a>
+      <a class="back" href="main_home.html"><img src="pics/back.png" width="40px" alt="back"></a>
+  </nav>
+<div class="f-container">
+  <div class="recipe">
+    <img  class="picture" src="pics/ginataang_isda.jpg" alt="ginataang_isda">
+    <h1>Ginataang tilapia</h1>
+</div>
+
+<div class="box">
+<div class=" ingredient">
+    <h2>ingredients</h2>
+    <li>Tilapia fillets</li>
+    <li>Coconut milk (gata)</li>
+    <li>Garlic, minced</li>
+    <li>Onion, chopped</li>
+    <li>Ginger, sliced</li>
+    <li>Chili peppers (optional)</li>
+    <li>Fish sauce (patis)</li>
+    <li>Salt and pepper to taste</li>
+    <li>cassava leaves (optional)</li>
+    
+
+
+</div>
+
+<div class=" ingredient">
+    <h3>Procedure:</h3>
+    <ol>
+      <li>Clean the tilapia fillets thoroughly under running water, then pat them dry with paper towels.</li>
+      <li>In a large skillet or pot, heat some oil over medium heat. Sauté minced garlic, chopped onion, and sliced ginger until fragrant.</li>
+      <li>If desired, add chili peppers for some heat.</li>
+      <li>Pour in the coconut milk (gata) and bring it to a gentle simmer.</li>
+      <li>Add fish sauce (patis) to taste, and season with salt and pepper.</li>
+      <li>Add the tilapia fillets to the simmering coconut milk mixture.</li>
+      <li>Cover the skillet or pot and let the tilapia cook for about 8-10 minutes or until fully cooked through.</li>
+      <li>If desired, add chopped vegetables such as spinach, bok choy, or string beans during the last few minutes of cooking.</li>
+      <li>Once the tilapia is cooked and the vegetables are tender, remove the skillet or pot from the heat.</li>
+      <li>Serve the Ginataang Tilapia hot with steamed rice.</li>
+    </ol>
+    
+</div>
+</div>
+</div>
+
+<style>
+  nav {
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+    
+  #add-to-favorites-btn {
+    position: absolute;
+    right: 45px;
+    z-index: 10;
+    margin-right: 20px;
+    transition: 1s ease;
+  }
+  
+  .back {
+    position: absolute;
+    z-index: 20;
+  }
+
+  #add-to-favorites-btn:active{
+background-image: url(pics/white_heart2.png);
+background-size: 40px;
+background-repeat: no-repeat;
+  }
+  </style>
+  
+
+ 
+ 
+
+  <script>
+    document.getElementById("add-to-favorites-btn").addEventListener("click", function() {
+        var recipeName = "ginataang isda"; // Get the recipe name dynamically
+        var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        if (!favorites.includes(recipeName)) {
+            favorites.push(recipeName);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "Recipe added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "200px";
+            alertMessage.style.right = "0";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        } else {
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "This recipe is already added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "140px";
+            alertMessage.style.right = "-95px";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        }
+    });
+  </script>
+
+</body>
+
+</html>

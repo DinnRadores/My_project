@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+
+<body>
+    
+
+  <style>
+  nav {
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  #add-to-favorites-btn {
+    position: absolute;
+    right: 45px;
+    z-index: 10;
+    margin-right: 20px;
+  }
+  
+  .back {
+    position: absolute;
+    z-index: 20;
+  }
+  </style>
+  
+  <nav>
+  <a id="add-to-favorites-btn"><img src="pics/favorite.png" width="40px" alt=""></a>
+      <a class="back" href="main_home.html"><img src="pics/back.png" width="40px" alt="back"></a>
+  </nav>
+<div class="f-container">
+  <div class="recipe">
+    <img  class="picture" src="pics/sinigang.png" alt="sinigang">
+        <h1> pork sinigang</h1>
+    </div>
+
+    <div class="box">
+    <div class=" ingredient">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>1 lb (450g) pork ribs or pork belly, cut into serving pieces</li>
+          <li>1 onion, quartered</li>
+          <li>2 tomatoes, quartered</li>
+          <li>1 radish (labanos), sliced</li>
+          <li>1 eggplant (talong), sliced</li>
+          <li>10-12 pieces string beans (sitaw), cut into 2-inch pieces</li>
+          <li>2 pieces green chili peppers (siling haba)</li>
+          <li>1 packet (40g) sinigang mix (tamarind soup base)</li>
+          <li>8 cups water</li>
+          <li>Salt to taste</li>
+        </ul>
+        
+
+    </div>
+
+    <div class=" ingredient">
+        
+        <h2>Procedure:</h2>
+<ol>
+  <li>In a large pot, bring water to a boil.</li>
+  <li>Add pork ribs or pork belly and let it simmer until meat is tender.</li>
+  <li>Add onions, tomatoes, and radish. Let it simmer for 5 minutes.</li>
+  <li>Add eggplant, string beans, and green chili peppers. Simmer for another 5 minutes.</li>
+  <li>Add sinigang mix and stir well. Simmer for 3-5 minutes.</li>
+  <li>Season with salt to taste.</li>
+  <li>Remove from heat and serve hot with steamed rice.</li>
+</ol>
+    </div>
+</div>
+</div>
+
+
+ 
+
+<style>
+  nav {
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+    
+  #add-to-favorites-btn {
+    position: absolute;
+    right: 40px;
+    z-index: 10;
+    margin-right: 20px;
+    transition: 1s ease;
+  }
+  
+  .back {
+    position: absolute;
+    z-index: 20;
+  }
+
+  #add-to-favorites-btn:active{
+background-image: url(pics/white_heart2.png);
+background-size: 40px;
+background-repeat: no-repeat;
+  }
+  </style>
+  
+
+ 
+ 
+
+  <script>
+    document.getElementById("add-to-favorites-btn").addEventListener("click", function() {
+        var recipeName = "sinigang"; // Get the recipe name dynamically
+        var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        if (!favorites.includes(recipeName)) {
+            favorites.push(recipeName);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "Recipe added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "200px";
+            alertMessage.style.right = "0";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        } else {
+            // Display message for 0.3 seconds
+            var alertMessage = document.createElement("div");
+            alertMessage.textContent = "This recipe is already added to favorites!";
+            alertMessage.style.position = "fixed";
+            alertMessage.style.top = "140px";
+            alertMessage.style.right = "-95px";
+            alertMessage.style.transform = "translateX(-50%)";
+            alertMessage.style.padding = "10px";
+            alertMessage.style.color = "#ffffff"; // White text color
+            alertMessage.style.backgroundColor = "#000000"; // Black background color
+            alertMessage.style.border = "1px solid #ccc";
+            alertMessage.style.borderRadius = "5px";
+            alertMessage.style.zIndex= "20";
+            document.body.appendChild(alertMessage);
+            setTimeout(function() {
+                document.body.removeChild(alertMessage);
+            }, 1500);
+        }
+    });
+  </script>
+
+</body>
+
+</html>

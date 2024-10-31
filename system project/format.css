@@ -1,0 +1,330 @@
+body{
+    margin: 0;
+    background-image: url(pics/wood_backg.png);
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+nav{
+    background-color: rgb(40, 40, 40);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    padding: 30px 10px;
+    box-shadow: 2px 2px 10px 2px rgb(30, 30, 30);
+    z-index: 10;
+}
+#search-container{
+
+    width: 230px;
+    position: relative;
+    left: 5px;
+    height: 25px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+    margin-left: 30px;
+}
+
+
+
+.search-bar{
+    display: block;
+    margin: auto;
+    position: absolute;
+    width: max-content;
+    height: 25px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    right: 15px;
+    transition: 0.3s ease;
+    padding-right: 10px;
+    margin-left: 20px;
+
+}
+
+
+
+
+.search-icon{
+    border-radius: 0%;
+    position: absolute;
+    top:0px;
+    right: -20px;
+    padding: 0px;
+    background-color: #00000000;
+    border: none;
+}
+
+
+
+a{
+    float: right;
+    position: relative;
+    right: 55px;
+    top: 5px;
+    color: white;
+    text-decoration:none ;
+    margin-left:8px;
+  
+}
+
+#heart, #settings, #pot{
+    position: relative;
+    top: -20px;
+    opacity: 45%;
+    transition: 0.10s ease;
+}
+
+#heart:active{
+    opacity: 100%;
+}
+
+#pot:active{
+    opacity: 100%;
+}
+
+
+#settings:hover{
+    opacity: 100%;
+    width: max-content;
+ 
+}
+
+.icon{
+    position: relative;
+    top: 80px;
+   display: block;
+   margin: auto;
+   margin-top: 70px;
+    width: 200px;
+    height: 260x;
+}
+
+h1, h2{
+    color: #fff;
+    margin-top: 15px;
+    padding-top: 0;
+    text-align: center;
+    font-family: cursive;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+h4{
+    color: #fff;
+    margin: 0px;
+    margin-top: 180px;
+    text-align: center;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.btn-continue{
+    display: block;
+    margin: auto;
+    margin-top: 0px;
+    background-color: rgb(255, 189, 7);
+    border-radius: 15px;
+    width: 95px;
+    height: 35px;
+    transition: 0.6s ease;
+    text-wrap: nowrap;
+    color: #0f0f0f;
+    font-weight: bold;
+    font-family: verdana;
+    padding-left: 2px;
+    padding-right: 10px;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.btn-continue:hover{
+    background-color: rgb(255, 196, 4);
+    width: 100px;
+    padding-right: 25px;
+}
+
+.btn-add{
+    display: block;
+    margin: auto;
+    
+    position: relative;
+    top: 330px;
+    color: white;
+    width: 100px;
+    height: 100px;
+    background-image: url(pics/woods.jpg);
+    background-position: center;
+
+    border-radius:10px;
+    border: 2px solid #111;
+    font-size: 60px;
+    box-shadow: 8px 8px 8px 4px rgba(0, 0, 0, 0.797);
+    transition: 0.1s ease;
+}
+
+.btn-add:hover{
+    width: 100px;
+}
+
+.btn-add:active{
+    background-color: rgb(250, 133, 8) ;
+    box-shadow: 4px 4px 12px 4px black inset;
+    width: 100px;
+    border: 1px solid #000;
+    
+}
+
+.no-favorite{
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: 260px;
+    font-family: verdana;
+    font-weight:bolder;
+}
+
+
+.title{
+    z-index: 1000;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 12px;
+    padding-left: 10px;
+    padding-right: 16px;
+    font-family: serif;
+    position: fixed;
+    margin-top: 100px;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 30px;
+
+    
+}
+
+.kahon{
+    width: 160px;
+    height: 160px;
+    color: black;
+
+    border-radius: 10px;
+    position: relative;
+    top: 260px;
+    left: 20px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+
+    padding: 40px 15px;
+    padding-top: 10px;
+  
+
+}
+
+.img{
+    background-color: #e3e2e2;
+    border-radius: 50%;
+    border: 3px solid rgb(226, 224, 224);
+
+    width: 165px;
+    height: 165px;
+    position:absolute;
+    margin-left: -85px;
+    box-shadow: 5px 5px 20px 3px rgba(0, 0, 0, 0.901);
+    transition: 0.6s ease;
+} 
+
+.img:hover{
+    transform: rotate(180deg);
+    width: 180px;
+    height: 180px;
+    box-shadow: -5px -5px 20px 3px rgba(0, 0, 0, 0.901);
+
+}
+
+.img-black{
+    background-color: #161616;
+    border-radius: 50%;
+    border: 3px solid #161616;
+
+    width: 165px;
+    height: 165px;
+    position:absolute;
+    margin-left: -85px;
+    box-shadow: 4px 4px 10px 2px black;
+    transition: 0.6s ease;
+} 
+
+
+.img-black:hover{
+    transform: rotate(180deg);
+    width: 180px;
+    height: 180px;
+    box-shadow: -5px -5px 20px 3px rgba(0, 0, 0, 0.901);
+
+
+}
+
+h6{
+    margin: 0;
+    position: relative;
+    margin-top: 180px;
+    margin-left: 60px;
+    font-family: cursive;
+    font-size: 15px;
+    color:#fff;
+    text-align: center;
+    
+}
+
+.hidden{
+    display: none;
+
+}
+
+#loading{
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 3px solid #ffaa00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 260px;
+    margin-left: -25px;
+
+
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+    
+    
+}
+
+.btn-continue{
+    position: relative;
+    left: -4px;
+    float: none;
+    text-align: center;
+    padding-top: 10px;
+    
+}
+
+.home-main{
+    padding-bottom: 10px;
+    padding-bottom: 0px;
+}
+
+
+
+
+
+
